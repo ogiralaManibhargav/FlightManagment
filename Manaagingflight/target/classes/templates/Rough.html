@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+		<div class="container-fluid">
+			<div class="contact-form">
+				<div class="row">
+					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
+						<h2 class="form-title">Add Booking With Passenger Details</h2>
+					</div>
+				</div>
+				<div class="row">
+	
+					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+						
+						<form class="form" th:action="@{saveBookinggs}" th:object="${booking}" method="POST">
+							<div class="form-group">
+								<label class="form-label" id="nameLabel" for="name"></label> 
+								<input type="text"
+									   class="form-control"
+									   name="name"
+									   placeholder="Enter the booking name" 
+									   tabindex="1" />
+							</div>
+	
+							<div class="form-group">
+								<label class="form-label" id="age" for="age"></label> 
+								<input type="text"
+									   class="form-control"
+									   name="age"
+									   placeholder="Enter age" 
+									   tabindex="2">
+							</div>
+	
+							<div class="form-group">
+								<label class="form-label" id="subjectLabel" for="bookingDate"></label>
+								<input type="text" 
+									   class="form-control"
+									   name="bookingDate" 
+									   placeholder="Enter the bookingDate"
+									   tabindex="3">
+							</div>
+							
+						<!-- 	<div class="form-group">
+								<label class="form-label" id="bookingDate" for="bookingDate"></label>
+								<input type="text" 
+									   class="form-control"
+									   name="bookingDate" 
+									   placeholder="Enter booking date"
+									   tabindex="3">
+							</div> -->
+							
+							<div class="form-group mt-2">
+								  <label for="exampleFormControlInput1" class="form-label"></label>
+								  
+								  
+								  <select th:field="*{flight}" name="flight" class="form-select passanger-style" aria-label=".Default select example">
+								  	<th:block th:each="flight : ${Flight}">
+ 										<option th:text="${flight.carrierName}" th:value="${flight.number}"></option> 
+ 									</th:block> 
+								  </select>
+							</div>
+							
+							<div class="text-center margin-top-25">
+								<button type="submit" class="btn btn-green">Add Booking</button>
+							</div>
+	
+						</form>
+						<!-- End form -->
+	
+					</div>
+					<!-- End col -->
+	
+				</div>
+				<!-- End row -->
+
+			</div>
+		</div>
+		<!-- End container -->
+</body>
+</html>

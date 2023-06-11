@@ -1,0 +1,87 @@
+
+
+
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Booking</title>
+</head>
+
+
+<body>
+
+	<form action="saveBookinggs" method="post">
+		
+		<table>
+			 <tr>
+			 <!-- 
+<td> Enter the Flightno:</td><td> <input type="text" name="Flightno"/></td></tr>
+<tr> -->
+			<td>Enter the Bookingname:</td>
+			<td><input type="text" name="name" /></td>
+			</tr>
+			<tr>
+				<td>Enter the Age:</td>
+				<td><input type="text" name="age" /></td>
+			</tr>
+			<tr>
+				<td>Enter the Bookingdate:</td>
+				<td><input type="text" name="bookingDate" /></td>
+			</tr>
+		 	<tr>
+			 	<td>Select flight</td>
+				<td><select name="flightentity" required="required" id="flightentity" >
+						<option th:each="flightentity : ${Flight}" th:text="${flightentity}" ></option>
+				</select>  
+			
+			</tr> 
+	        
+	
+		
+			
+		
+				
+			</tr>
+
+			<tr>
+				<td><input type="submit" value="Register" /></td>
+			</tr>
+		</table>
+
+
+	</form>
+
+</body>
+<!--
+
+<body>
+
+<form:form method = "POST" action = "saveBookinggs">
+         <table>
+            <tr>
+               <td><form:label path = "Bookingname">Enter the Bookingname</form:label></td>
+               <td><form:input path = "Bookingname" /></td>
+            </tr>
+            <tr>
+               <td><form:label path = "Age">Enter the Age</form:label></td>
+               <td><form:input path = "Age" /></td>
+            </tr>  
+            <tr>
+               <td><form:label path = "Bookingdate">Bookingdate</form:label></td>
+               <td><form:input path = "Bookingdate" /></td>
+            </tr>  
+            <tr>
+            
+            </tr> 
+            
+            <tr>
+               <td colspan = "2">
+                  <input type = "submit" value = "Submit"/>
+               </td>
+              </table>  
+      </form:form>
+
+</body>
+-->
+
+</html>
